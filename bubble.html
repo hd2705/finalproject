@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainability Scatter Plot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: #f8f9fa;
+    }
+
+    #controls-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      margin: 10px 0;
+    }
+
+    #filter-controls {
+      font-size: 16px;
+      margin: 20px;
+    }
+
+    svg {
+      border: 1px solid #ddd;
+      margin-top: 20px;
+    }
+
+    .tooltip {
+      position: absolute;
+      background: #fff;
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 12px;
+      pointer-events: none;
+      opacity: 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .control-group {
+      margin: 10px;
+    }
+
+    .control-group select {
+      padding: 10px;
+      font-size: 14px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="controls-container">
+    <h1>Country-Level Analysis of Sustainable Materials</h1>
+  </div>
+
+  <!-- Filter Controls with Country and Year Dropdowns -->
+  <div id="filter-controls" class="control-group">
+    <label for="country-filter">Select Country: </label>
+    <select id="country-filter">
+      <!-- Country options will be added dynamically via JavaScript -->
+    </select>
+
+    <label for="year-filter">Select Year: </label>
+    <select id="year-filter">
+      <!-- Year options will be added dynamically via JavaScript -->
+    </select>
+  </div>
+
+  <!-- Container for the scatter plot -->
+  <div id="chart-container"></div>
+  <button id="back-button">Back to Map</button>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="bubble-chart.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

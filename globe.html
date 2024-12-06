@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainable Fashion Choices: A Data-Driven Analysis of Eco-Friendly Trends</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Sustainable Fashion Choices: A Data-Driven Analysis of Eco-Friendly Trends</h1>
+
+  <div class="container">
+    <!-- Dropdown Filters -->
+    <div class="controls">
+      <div class="control-group">
+        <label for="material-type">Material Type:</label>
+        <select id="material-type">
+          <option value="All">All</option>
+          <option value="Tencel">Tencel</option>
+          <option value="Vegan Leather">Vegan Leather</option>
+          <option value="Bamboo Fabric">Bamboo Fabric</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="eco-friendly">Eco-Friendly Manufacturing:</label>
+        <select id="eco-friendly">
+          <option value="All">All</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="year-range">Year:</label>
+        <input type="range" id="year-range" min="2010" max="2024" value="2024" step="1">
+        <span id="year-label">2024</span>
+      </div>
+      <div class="control-group">
+        <label for="data-type">Data Type:</label>
+        <select id="data-type">
+          <option value="Carbon Footprint">Carbon Footprint</option>
+          <option value="Sustainability Rating">Sustainability Rating</option>
+          <option value="Water Usage (Liters)">Water Usage (Liters)</option>
+          <option value="Waste Production (KG)">Waste Production (KG)</option>
+        </select>
+      </div>
+      <div class="control-group play-pause">
+        <button id="play-button">Play</button>
+        <button id="pause-button" disabled>Pause</button>
+      </div>
+      <div id="control-group">
+        <label for="visualization-select">View Trends:</label>
+        <select id="visualization-select">
+          <option value="">Select...</option>
+          <option value="trends">Material Impact Over Time</option>
+          <option value="sankey">Carbon FootPrint</option>
+          <option value="bubble">Material & Country Analysis</option>
+        </select>
+      </div>
+               
+    </div>
+
+    <!-- Map Visualization -->
+    <div id="chart"></div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div>
+        <span class="legend-label">Carbon Footprint</span>
+        <div class="legend-swatch" style="background-color: #e5f5e0;"></div>
+        <div class="legend-swatch" style="background-color: #a1d99b;"></div>
+        <div class="legend-swatch" style="background-color: #31a354;"></div>
+        <div class="legend-swatch" style="background-color: #006d2c;"></div>
+      </div>
+      <div>
+        <span class="legend-label">Sustainability Rating</span>
+        <div class="legend-swatch" style="background-color: #fee8c8;"></div>
+        <div class="legend-swatch" style="background-color: #fdbb84;"></div>
+        <div class="legend-swatch" style="background-color: #fc8d59;"></div>
+        <div class="legend-swatch" style="background-color: #d7301f;"></div>
+      </div>
+      <div>
+        <span class="legend-label">Water Usage (Liters)</span>
+        <div class="legend-swatch" style="background-color: #deebf7;"></div>
+        <div class="legend-swatch" style="background-color: #9ecae1;"></div>
+        <div class="legend-swatch" style="background-color: #3182bd;"></div>
+        <div class="legend-swatch" style="background-color: #08519c;"></div>
+      </div>
+      <div>
+        <span class="legend-label">Waste Production (KG)</span>
+        <div class="legend-swatch" style="background-color: #efedf5;"></div>
+        <div class="legend-swatch" style="background-color: #bcbddc;"></div>
+        <div class="legend-swatch" style="background-color: #756bb1;"></div>
+        <div class="legend-swatch" style="background-color: #54278f;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Details Sidebar for Selected Country -->
+  <div id="details-sidebar" class="details-sidebar">
+    <button id="close-sidebar" class="close-sidebar">&times;</button>
+    <h2 id="country-name">Country Details</h2>
+    <p><strong>Year:</strong> <span id="details-year"></span></p>
+    <p><strong>Material Type:</strong> <span id="details-material-type"></span></p>
+    <p><strong>Eco-Friendly Manufacturing:</strong> <span id="details-eco-friendly"></span></p>
+    <p><strong>Carbon Footprint (MT):</strong> <span id="details-carbon-footprint"></span></p>
+    <p><strong>Sustainability Rating:</strong> <span id="details-sustainability-rating"></span></p>
+    <p><strong>Water Usage (Liters):</strong> <span id="details-water-usage"></span></p>
+    <p><strong>Waste Production (KG):</strong> <span id="details-waste-production"></span></p>
+  </div>
+
+  <!-- D3.js, TopoJSON, and custom JavaScript -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://d3js.org/topojson.v3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-scale-chromatic@1.5.0/dist/d3-scale-chromatic.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

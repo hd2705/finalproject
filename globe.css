@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+#title-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#title-container h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #ffffff;
+}
+
+#globe-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    background: radial-gradient(circle at center, #0e1e38, #070f1c);
+}
+
+#globe {
+    width: 90%;
+    height: auto;
+}
+
+/* Tooltip styling */
+#tooltip {
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.hidden {
+    display: none;
+}
+
+path {
+    stroke: #000;
+    stroke-width: 0.5px;
+    cursor: pointer;
+}
+
+path:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Time Series Sankey Diagram</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/d3-sankey"></script>
+  <style>
+    .tooltip {
+      position: absolute;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 8px;
+      border-radius: 4px;
+      pointer-events: none;
+      opacity: 0;
+      font-size: 12px;
+    }
+    .link {
+      fill: none;
+      stroke-opacity: 0.5;
+    }
+    .link:hover {
+      stroke-opacity: 0.8;
+    }
+    .node rect {
+      cursor: move;
+      fill-opacity: 0.9;
+      shape-rendering: crispEdges;
+    }
+    .node text {
+      pointer-events: none;
+      text-shadow: 0 1px 0 #fff;
+    }
+    #controls {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Material Contribution to Carbon Footprint Over Time</h1>
+  <div id="controls">
+    <button id="play-button">Play</button>
+    <button id="pause-button">Pause</button>
+    <span id="year-label"></span>
+    <button id="back-button">Back to Map</button>
+  </div>
+  <div id="sankey-chart"></div>
+  <script src="sankey.js"></script>
+</body>
+</html>

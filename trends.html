@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trends Over Years</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Yearly Environmental Metrics by Material Type</h1>
+  <div id="chart-container">
+    <div id="stacked-area-chart"></div>
+  </div>
+  <div id="controls">
+    <label for="metric-select">Select Metric:</label>
+    <select id="metric-select">
+      <option value="Carbon_Footprint_MT">Carbon Footprint (MT)</option>
+      <option value="Water_Usage_Liters">Water Usage (Liters)</option>
+      <option value="Waste_Production_KG">Waste Production (KG)</option>
+    </select>
+  </div>
+   
+  <button id="back-button">Back to Map</button>
+
+  <!-- Include D3.js -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="stacked-area-2.js"></script>
+</body>
+</html>
